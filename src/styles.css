@@ -1,0 +1,166 @@
+:root {
+        /* Deep space background */
+        --bg-color: #0b0714;
+        /* Glowing neon coral and cosmic violet accents */
+        --accent-start: #ff2a5f;
+        --accent-end: #7928ca;
+        --card-bg: #140d24;
+        --card-border: #2c1d47;
+        --text-primary: #ffffff;
+        --text-secondary: #a78bfa;
+        --text-muted: #8c82a6;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: radial-gradient(circle at 50% 50%, #1d0f36 0%, var(--bg-color) 100%);
+        color: var(--text-primary);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 1.5rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      header h1 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        margin-bottom: 0.6rem;
+        /* Eye-catching gradient text */
+        background: linear-gradient(135deg, var(--accent-start) 0%, #d53f8c 40%, var(--accent-end) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.5px;
+      }
+
+      header p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      main {
+        width: 100%;
+        max-width: 520px;
+        background-color: var(--card-bg);
+        border: 2px solid var(--card-border);
+        padding: 2.5rem;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
+                    0 0 50px -10px rgba(121, 40, 202, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 1rem 1.2rem;
+        border-radius: 14px;
+        border: 2px solid var(--card-border);
+        background-color: #0b0616;
+        color: var(--text-primary);
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      input[type="text"]:focus {
+        border-color: var(--accent-start);
+        box-shadow: 0 0 12px rgba(255, 42, 95, 0.2);
+      }
+
+      button[type="submit"] {
+        padding: 1rem;
+        border-radius: 14px;
+        border: none;
+        background: linear-gradient(135deg, var(--accent-start) 0%, var(--accent-end) 100%);
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 42, 95, 0.3);
+      }
+
+      button[type="submit"]:hover {
+        opacity: 0.95;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(255, 42, 95, 0.4);
+      }
+
+      button[type="submit"]:active {
+        transform: translateY(1px);
+      }
+
+      button[type="submit"]:disabled {
+        background: #2d2047;
+        color: var(--text-muted);
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+      }
+
+      .quote-display {
+        border-top: 2px solid var(--card-border);
+        padding-top: 2rem;
+        text-align: center;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #quote-text {
+        font-size: 1.3rem;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        color: #f1e7ff;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      }
+
+      #quote-author {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      footer {
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      footer a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px dashed var(--text-secondary);
+        transition: color 0.2s;
+      }
+
+      footer a:hover {
+        color: var(--accent-start);
+        border-bottom-color: var(--accent-start);
+      }
