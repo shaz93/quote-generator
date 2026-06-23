@@ -6,7 +6,7 @@
         let topicInput = document.querySelector("#topic");
         let topic = topicInput.value.trim();
 
-        // Clear the display with an initial loading note
+    
         document.querySelector("#quote").innerHTML = "Searching the cosmos...";
 
         let systemPrompt = "Write a beautiful, single-sentence quote about the given topic. Do not include quotes around it, and do not include the author's name.";
@@ -26,7 +26,7 @@
           .then((data) => {
             let quote = data.candidates[0].content.parts[0].text.trim();
 
-            // Run the typewriter effect using exactly your requested structure
+            
             new Typewriter("#quote", {
               strings: quote,
               autoStart: true,
