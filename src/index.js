@@ -15,11 +15,11 @@ const apiKey = "643960765dfbctb234c6b4f7o500facf";
         let topic = topicInput.value.trim();
 
         // Beautiful Loading State
-        document.querySelector("#quote").innerHTML = `<span class="loading-text">Channelling cosmic thoughts about "${topic}"...</span>`;
+        document.querySelector("#quote").innerHTML = `<span class="loading-text">Generating cosmic thoughts about "${topic}"...</span>`;
         optionsContainer.style.display = "none";
         
         submitButton.disabled = true;
-        submitButton.value = "Channelling...";
+        submitButton.value = "Generating...⌛";
 
         let prompt = `Generate a beautiful, single-sentence quote about ${topic}`;
         let context = "Do not include quotation marks around the quote, and do not include the author name.";
