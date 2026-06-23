@@ -1,4 +1,4 @@
-      :root {
+:root {
         /* Deep space backdrop palette */
         --bg-color: #0b0714;
         --accent-start: #ff2a5f;
@@ -31,6 +31,17 @@
       header {
         text-align: center;
         margin-bottom: 2.5rem;
+      }
+
+      .brand-logo {
+        max-width: 150px;
+        height: auto;
+        margin-bottom: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .brand-logo:hover {
+        transform: scale(1.05);
       }
 
       header h1 {
