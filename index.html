@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<link rel="stylesheet" href="src/styles.css" />
-    <title>Document</title>
-</head>
-<body>
-     <header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Quote Generator</title>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+ </head>
+  <body>
+
+    
+    <header>
       <h1>AI Quote Generator</h1>
-      <p>Spark a thought in a cosmic pulse</p>
+      <p>Spark cosmic wisdom in a split-second</p>
     </header>
 
     
-    <main>
-      <form id="quote-generator-form">
-        <input
-          id="topic"
-          type="text"
-          placeholder="Enter a mood or topic (e.g., courage, rain, morning)..."
-          autofocus
-          required
-          autocomplete="off"
-        />
-        <input type="submit" value="Generate Quote" />
-      </form>
-
-      <div class="quote-display">
-        <div id="quote">What would you like an original quote about?</div>
-      </div>
-    </main>
+    <div class="stacked-container">
+      
+      
+      <aside class="control-panel">
+        <form id="quote-generator-form">
+          <input
+            id="topic"
+            type="text"
+            placeholder="Type a topic (e.g., courage, rain, focus)..."
+            autofocus
+            required
+            autocomplete="off"
+          />
+          <input type="submit" value="Generate Quote" id="submit-btn" />
+        </form>
 
     
+        <div class="presets-container">
+          <div class="presets-label">Popular Topics:</div>
+          <div class="pills-grid">
+            <button type="button" class="preset-pill" onclick="selectPreset('Stardust & Dreams')">✨ Dreams</button>
+            <button type="button" class="preset-pill" onclick="selectPreset('Courage under storm')">⚡ Courage</button>
+            <button type="button" class="preset-pill" onclick="selectPreset('Solitude in space')">🌌 Solitude</button>
+            <button type="button" class="preset-pill" onclick="selectPreset('Endless creation')">🎨 Creation</button>
+          </div>
+        </div>
+      </aside>
+
+      
+      <main class="canvas-panel">
+        <div class="canvas-glow"></div>
+        <div class="quote-display">
+          <div id="quote">What would you like an original quote about?</div>
+          
+          <div class="options-container" id="options-container">
+            <button type="button" class="action-btn" id="copy-btn">
+              Copy Quote
+            </button>
+            <button type="button" class="action-btn" id="tweet-btn">
+              Tweet Quote
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
     <footer>
       This AI project was coded by
-      <a href="https://github.com/matthieua/" target="_blank">Sheron Ndimande</a>, 
-      open-sourced on <a href="https://github.com/shecodesio/french-poem-generator" target="_blank">GitHub</a>, 
-      and hosted on <a href="https://ai-french-poem-generator.netlify.app/" target="_blank">Netlify</a>.
+      <a href="https://github.com/" target="_blank">Sheron Ndimande</a>, 
+      is <a href="https://github.com/shecodesio/french-poem-generator" target="_blank">open-sourced on GitHub</a>, 
+      and is <a href="https://ai-french-poem-generator.netlify.app/" target="_blank">hosted on Netlify</a>.
     </footer>
- <script src="src/index.js"></script>
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>
