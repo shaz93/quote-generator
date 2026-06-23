@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
-    <title>AI Quote Generator</title>
-     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    
+ <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="src/styles.css" />
+    <title>Document</title>
 </head>
 <body>
-  <header>
+     <header>
       <h1>AI Quote Generator</h1>
       <p>Spark a thought in a cosmic pulse</p>
     </header>
 
-
+    
     <main>
-      <form id="quote-form">
+      <form id="quote-generator-form">
         <input
           id="topic"
           type="text"
@@ -25,22 +25,21 @@
           required
           autocomplete="off"
         />
-        <button type="submit" id="submit-btn">Generate Quote</button>
+        <input type="submit" value="Generate Quote" />
       </form>
 
       <div class="quote-display">
-        <p id="quote-text">What would you like an original quote about?</p>
-        <p id="quote-author"></p>
+        <div id="quote">What would you like an original quote about?</div>
       </div>
     </main>
 
-
+    
     <footer>
       This AI project was coded by
-      <a href="https://github.com/matthieua/" target="_blank">Sheron Ndimande</a>, 
+      <a href="https://github.com/matthieua/" target="_blank">Matt Delac</a>, 
       open-sourced on <a href="https://github.com/shecodesio/french-poem-generator" target="_blank">GitHub</a>, 
       and hosted on <a href="https://ai-french-poem-generator.netlify.app/" target="_blank">Netlify</a>.
     </footer>
-
+ <script src="src/index.js"></script>
 </body>
 </html>

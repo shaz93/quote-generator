@@ -1,4 +1,4 @@
- const apiKey = ""; // Automatically injected at runtime
+ const apiKey = "643960765dfbctb234c6b4f7o500facf";
 
       function generateQuote(event) {
         event.preventDefault();
@@ -6,27 +6,18 @@
         let topicInput = document.querySelector("#topic");
         let topic = topicInput.value.trim();
 
-    
-        document.querySelector("#quote").innerHTML = "Searching the cosmos...";
+        // Clear the display with an initial loading note
+        document.querySelector("#quote").innerHTML = `<span class="loading-text">Searching the cosmos for "${topic}"...</span>`;
 
-        let systemPrompt = "Write a beautiful, single-sentence quote about the given topic. Do not include quotes around it, and do not include the author's name.";
-        let url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+        let prompt = `Generate a beautiful, single-sentence quote about ${topic}`;
+        let context = "Do not include quotation marks around the quote, and do not include the author name.";
+        let url = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
-        let payload = {
-          contents: [{ parts: [{ text: `Topic: ${topic}` }] }],
-          systemInstruction: { parts: [{ text: systemPrompt }] }
-        };
+        // Get content via Axios & trigger the custom Typewriter configuration
+        axios.get(url)
+          .then((response) => {
+            let quote = response.data.answer.trim();
 
-        fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            let quote = data.candidates[0].content.parts[0].text.trim();
-
-            
             new Typewriter("#quote", {
               strings: quote,
               autoStart: true,
